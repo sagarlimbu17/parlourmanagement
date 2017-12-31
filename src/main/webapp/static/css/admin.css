@@ -1,0 +1,91 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url('/static/fonts/glyphicons-halflings-regular.woff');
+}
+body{
+    font-family:myFirstFont;
+}
+.jumbotron{
+    background: #9ED4FA;
+}
+.menu_items{
+    border:2px solid azure;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    text-align: center;
+    color: #fff;
+}
+.glyphicon{
+    font-size:50px;
+    padding-top: 15px;
+
+}
+.col-md-4{
+    padding: 5px;
+}
+.menu_items:hover{
+    background: greenyellow;
+    color: #000;
+    cursor: pointer;
+}
+
+
+<!-- navbar css -->
+
+.navbar-default .navbar-nav > li.dropdown:hover > a,
+.navbar-default .navbar-nav > li.dropdown:hover > a:hover,
+.navbar-default .navbar-nav > li.dropdown:hover > a:focus {
+    background-color: rgb(231, 231, 231);
+    color: rgb(85, 85, 85);
+}
+li.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+.navbar-default {
+    font-size: 1.15em;
+    font-weight: 400;
+    background-color: #006b96;
+    padding: 10px;
+    border: 0px;
+    border-radius: 0px;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: #cbf0ff;
+}
+
+.navbar-default .navbar-brand {
+    color: #FFF;
+}
+
+.navbar-default .navbar-brand:hover {
+    color: #ffffff;
+    text-shadow: 1px -1px 8px #b3e9ff;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+    background-color: #004059;
+    color: white;
+}
+
+.navbar-default .navbar-toggle {
+    border: none;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border: none;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: #002433;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #ffffff;
+}

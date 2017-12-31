@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js"
+      xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Lashes Makeup Parlour Management System</title>
+    <link th:href="@{/static/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/static/css/common.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div th:replace="common/common :: common-navbar"/>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12" style="border: 1px solid aliceblue; padding: 10px;">
+            <form th:action="@{/report}" th:object="${salesReportMapping}" method="post">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="fromDate">From Date:--</label>
+                        <input class="form-control" th:field="*{fromDate}" type="date" id="fromDate" name="fromDate"/>
+                        <p th:if="${#fields.hasErrors('fromDate')}" class="label label-danger" th:errors="*{fromDate}">Please choose valid from date</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="toDate">To Date:--</label>
+                        <input class="form-control" th:field="*{toDate}" type="date" id="toDate" name="toDate"/>
+                        <p th:if="${#fields.hasErrors('toDate')}" class="label label-danger" th:errors="*{toDate}">Please choose valid to date</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="salesType">Type:-</label>
+                        <select name="salesType"  id="salesType" class="form-control">
+                            <option value="both">All</option>
+                            <option value="product">Product</option>
+                            <option value="service">Service</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <button style="margin-top: 24px;" id="generate" name="action" class="btn btn-primary" value="getReport">Generate</button>
+                    <button style="margin-top: 24px;" name="action" class="btn btn-primary" value="downloadExcel">Download Excel</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <table class="table table-striped">
+            <tr>
+                <th>S.N</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Date</th>
+            </tr>
+            <tr th:each="sales,iterator : ${salesList}">
+                <td th:text="${iterator.index+1}"></td>
+                <td th:text="${sales.name}"></td>
+                <td th:text="${sales.category}"></td>
+                <td th:text="${sales.quantity}"></td>
+                <td th:text="${sales.totalPrice}"></td>
+                <td th:text="${sales.createdDate}"></td>
+            </tr>
+        </table>
+        <hr/>
+        <span style="font-size:large;">Total Sales:-</span> <span th:text="${totalSales}"></span>
+    </div>
+</div>
+
+<script th:src="@{/static/js/jquery-3.2.1.min.js}"></script>
+
+<script>
+    function  salesReport(fromDate,toDate,salesType) {
+        this.fromDate = fromDate,
+        this.toDate= toDate,
+        this.salesType = salesType;
+    }
+
+    $("#d").click(function (e) {
+        e.preventDefault();
+        var fromDate= $("#fromDate").val();
+        var toDate = $("#toDate").val();
+        var salesType = $("#salesType").val();
+        if(fromDate ==''){
+            alert("From date cannot be empty");
+            return;
+        }
+        else if(toDate==''){
+            alert("to date cannot be empty");
+            return;
+        }
+
+    })
+</script>
+
+</body>
+</html>

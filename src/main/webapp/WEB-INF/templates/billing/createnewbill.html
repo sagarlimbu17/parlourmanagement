@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js"
+      xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Lashes Makeup Parlour Management System</title>
+    <link th:href="@{/static/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/static/css/common.css}" rel="stylesheet" type="text/css"/>
+
+    <style>
+        .glyphicon{
+            font-size:10px;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="common/common :: common-navbar"/>
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-offset-1 col-md-6">
+            <div class="panel-group">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <p style="text-align: center;">CREATE A NEW BILL</p>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" id="productForm" method="post">
+
+                            <div class="form-group">
+                                <div th:if="${productAdded}">
+                                    <div class="alert alert-success">
+                                        <p>new bill successfully created</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="category">Billing Type:</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" id="salesType" name="salesType">
+                                        <option value="product">Product</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="category">Category:</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" id="category" name="productCategory">
+                                        <option value="none" selected="selected">None</option>
+                                        <option th:name="productCategory"  th:each="cat : ${categories}" th:value="${cat.category}" th:text="${cat.category}"></option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="productName">Name:</label>
+                                <div class="col-sm-10" >
+                                    <select  class="form-control" id="productName" name="productName">
+                                        <option value="none" selected="selected">None</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="productPrice">Price:</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control"
+                                           placeholder="Product Price" name="productPrice" id="productPrice" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="productQuantity">Quantity:</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" id="productQuantity"
+                                           placeholder="Quantity" name="productQuantity">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="productVendor">Vendor:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control"
+                                           placeholder="Product Vendor" name="productVendor" id="productVendor" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" onclick="addProductToCart(event)" class="btn btn-default">Add to Cart</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <h3>Items added to cart</h3>
+            <table class="table table-striped">
+                <thead>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="table_body">
+                </tbody>
+            </table>
+            <div id="grand_total">
+
+            </div>
+            <div class="col-md-offset-9 col-md-3" id="check_out">
+
+                <button type="button" onclick="viewCartOnModal()" class="btn btn-success" data-toggle="modal" data-target="#myModal">Open Cart</button>
+
+                <!-- Modal -->
+                <div id="myModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content" >
+                            <div class="modal-header" id="modal_header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title"><h2>Final Cart Items</h2></h4>
+                            </div>
+                            <div class="modal-body" id="modal_body">
+                                <table class="table table-striped" id="modal_table">
+                                    <thead>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total Price</th>
+                                    <th>Actions</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="modal_cart">
+                                    </tbody>
+                                </table>
+                                <div id="modal_total"></div>
+                            </div>
+
+                            <div id="msg" style="display: none;"><h2 align="center">Billing Completed</h2></div>
+                            <div class="modal-footer">
+                                <button id="confirmButton" onclick="createBills(event)" type="button" class="btn btn-success" >Confirm</button>
+                                <button type="button" class="btn btn-danger " data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script th:src="@{/static/js/jquery-3.2.1.min.js}"></script>
+    <script th:src="@{/static/js/bootstrap.min.js}"></script>
+    <script th:src="@{/static/js/addproduct.js}"></script>
+    <script th:src="@{/static/js/createBill.js}"></script>
+
+    <script>
+        $('#myModal').on('hidden.bs.modal', function () {
+           if(cart.length ==0){
+               location.reload();
+
+           }
+        });
+
+
+        $(document).ready(function () {
+            sendAjaxRequest();
+        })
+        
+        function sendAjaxRequest() {
+            var type = $("#billingType").value;
+            
+        }
+    </script>
+
+</div>
+
+</body>
+</html>
