@@ -15,5 +15,7 @@ public interface ProductService {
     List<RgProduct> getProductByProductName(String productName);
     void registerProduct(RgProduct rgProduct);
     long returnLastStock(String productName);
+    void editSingleProduct(RgProduct rgProduct);
+    RgProduct findRgProduct(Long id);
 
 }

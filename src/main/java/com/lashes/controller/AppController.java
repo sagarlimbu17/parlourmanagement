@@ -429,6 +429,33 @@ public class AppController {
         return "users/editusers";
     }
 
+    @RequestMapping("/editProduct")
+    public String editProd(Model model){
+        model.addAttribute("categoryList",categoryService.getAllCategories("product"));
+        return "items/editProduct";
+    }
+
+    @RequestMapping(value = "/editProduct",method = RequestMethod.POST)
+    public String editProduct(Model model, @RequestParam String category){
+        model.addAttribute("categoryList",categoryService.getAllCategories("product"));
+        model.addAttribute("productList", productService.getProductDetailsByCategory(category));
+        return "items/editProduct";
+    }
+
+    @RequestMapping("/editSingleProduct")
+    public String editSingleProduct(Model model, @RequestParam Long id){
+        model.addAttribute("RgProduct",productService.findRgProduct(id));
+        return "items/editsingleproduct";
+    }
+
+    @RequestMapping(value = "/editSingleProduct", method = RequestMethod.POST)
+    public String editSingleProductPost(Model model, @ModelAttribute RgProduct rgProduct){
+        productService.editSingleProduct(rgProduct);
+        model.addAttribute("productEdited", true);
+        model.addAttribute("productEditComplete",true);
+        model.addAttribute("modifiedProduct",productService.findRgProduct(rgProduct.getId()));
+        return "items/viewmodifiedproduct";
+    }
 
 
     //init binder

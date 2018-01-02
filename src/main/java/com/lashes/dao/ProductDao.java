@@ -14,4 +14,6 @@ public interface ProductDao {
     List<RgProduct> getProductByProductName(String productName);
     void registerProduct(RgProduct rgProduct);
     RgProduct getSingleProductByProductName(String productName);
+    void editSingleProduct(RgProduct rgProduct);
+    RgProduct findRgProduct(Long id);
 }

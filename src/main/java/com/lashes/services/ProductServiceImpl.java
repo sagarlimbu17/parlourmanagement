@@ -35,4 +35,15 @@ public class ProductServiceImpl implements ProductService {
     public long returnLastStock(String productName){
         return productDao.returnLastStock(productName);
     }
+
+    @Override
+    public void editSingleProduct(RgProduct rgProduct) {
+        productDao.editSingleProduct(rgProduct);
+
+    }
+
+    @Override
+    public RgProduct findRgProduct(Long id) {
+        return productDao.findRgProduct(id);
+    }
 }

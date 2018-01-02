@@ -75,4 +75,12 @@ public class ProductDaoImpl implements ProductDao {
         em.persist(rgProduct);
     }
 
+    public void editSingleProduct(RgProduct rgProduct) {
+        em.merge(rgProduct);
+    }
+
+    public RgProduct findRgProduct(Long id) {
+        RgProduct rgProduct = em.find(RgProduct.class,id);
+        return rgProduct;
+    }
 }
