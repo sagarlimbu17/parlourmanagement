@@ -12,6 +12,7 @@ import org.springframework.dao.annotation.PersistenceExceptionTranslationPostPro
 import org.springframework.format.FormatterRegistry;
 import org.springframework.format.datetime.DateFormatterRegistrar;
 import org.springframework.format.datetime.standard.DateTimeFormatterRegistrar;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -30,6 +31,9 @@ import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 
 import javax.persistence.EntityManagerFactory;
+import javax.sql.DataSource;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Properties;
 
 @Configuration
@@ -46,7 +50,7 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
     }
 
     @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory(){
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() throws URISyntaxException{
         LocalContainerEntityManagerFactoryBean emm = new LocalContainerEntityManagerFactoryBean();
         emm.setDataSource(dataSource());
         emm.setPackagesToScan(new String[]{"com.lashes.entities"});
@@ -80,7 +84,7 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
     }
 
 
-    @Bean(name = "dataSource")
+    /*@Bean(name = "dataSource")
     public BasicDataSource dataSource(){
         BasicDataSource ds = new BasicDataSource();
         ds.setDriverClassName("com.mysql.jdbc.Driver");
@@ -90,7 +94,23 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
         return  ds;
 
     }
+*/
 
+    @Bean
+    public DataSource dataSource() throws URISyntaxException {
+        URI dbUri = new URI(System.getenv("CLEARDB_DATABASE_URL"));
+
+        String username = dbUri.getUserInfo().split(":")[0];
+        String password = dbUri.getUserInfo().split(":")[1];
+        String dbUrl = "jdbc:mysql://" + dbUri.getHost() + dbUri.getPath();
+
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setUrl(dbUrl);
+        dataSource.setUsername(username);
+        dataSource.setPassword(password);
+
+        return dataSource;
+    }
 
     @Bean
     public ViewResolver viewResolver() {
