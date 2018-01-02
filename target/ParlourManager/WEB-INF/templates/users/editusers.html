@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js"
+      xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Lashes Makeup Parlour Management System</title>
+    <link th:href="@{/static/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/static/css/common.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div th:replace="common/common :: common-navbar"/>
+
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-12">
+            <div th:if="${userDeleted}" class="alert alert-success">
+                <p>User is successfully deleted</p>
+            </div>
+            <table class="table table-striped" id="user_table">
+                <tr>
+                    <th>S.N</th>
+                    <th>Username</th>
+                    <th>User Role</th>
+                    <th>Action</th>
+                </tr>
+                <tr th:Each="user,iterator : ${userList}">
+                        <td th:text="${iterator.index+1}"></td>
+                        <td th:text="${user.username}">
+                        <td th:text="${user.userRole[0].role}"></td>
+                        <td>
+                            <a type="submit" th:href="@{viewSingleUser?id=}+${user.id}" class="btn btn-primary" id="btnEdit">Edit</a>
+                            <a th:href="@{deleteSingleUser?id=}+${user.id}" class="btn btn-danger">delete</a>
+                        </td>
+                </tr>
+            </table>
+            <hr/>
+            <a th:href="@{/admin}" class="btn btn-warning">Back</a>
+        </div>
+    </div>
+</div>
+
+<script th:src="@{/static/js/jquery-3.2.1.min.js}"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#user_table").on('click','#btnEdit',function () {
+            var currentRow = $(this).closest("tr");
+            var username = currentRow.find("td:eq(1)").text();
+
+            console.log(username);
+        })
+    })
+</script>
+
+</body>
+</html>

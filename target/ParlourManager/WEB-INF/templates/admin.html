@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js"
+      xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Lashes Makeup Parlour Management System</title>
+    <link th:href="@{/static/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/static/css/admin.css}" rel="stylesheet" type="text/css"/>
+
+</head>
+
+<style type="text/css">
+    .btn-primary{
+        padding: 10px 15px 20px 10px;
+        width: 244px;
+    }
+    .btn-primary p{
+        font-size: 26px;
+    }
+    ul.dropdown-menu{
+        width: 246px;
+        text-align: center;
+        text-transform: capitalize;
+        font-size: 20px;
+    }
+    ul.dropdown-menu li a:hover{
+        background-color: lightgray;
+    }
+    .row{
+        margin-top: 10px;
+    }
+</style>
+
+<body>
+
+<div th:replace="common/common :: common-navbar"/>
+
+<div class="container">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button"
+                            data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-duplicate"></span><br/>
+                        <p>BILLING</p>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/admin/billing}">Product Billing</a></li>
+                        <li><a href="#">Update bill</a></li>
+                        <li><a th:href="@{/serviceBilling}">Service Billing</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button"
+                            data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-education"></span><br/>
+                        <p>FINANCE</p>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/finance}">Set Target</a></li>
+                        <li><a th:href="@{/financeanalysis}">Financial Analysis</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button"
+                            data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-th-list"></span><br/>
+                        <p>REPORTS</p>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/report}">View Reports</a></li>
+                        <li><a href="#">Edit Reports</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-md-3">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button"
+                            data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-user"></span><br/>
+                        <p>USERS</p>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/createNewUser}">Create User</a></li>
+                        <li><a th:href="@{/editUsers}">Edit Users</a></li>
+                        <li><a th:href="@{/activateUser}">Activate User</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button"
+                            data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-pencil"></span><br/>
+                        <p>REGISTER</p>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/registerProduct}">Register Product</a></li>
+                        <li><a th:href="@{/registerService}">Register Service</a></li>
+                        <li><a th:href="@{/editProduct}">Edit Product</a></li>
+                        <li><a href="@{/editServices}">Edit Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button"
+                            data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-plus"></span><br/>
+                        <p>PRODUCTS</p>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/admin/addProduct}">Add New Product</a></li>
+                        <li><a href="#">List Products</a></li>
+                        <li><a href="#">Edit Products</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button"
+                            data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-pushpin"></span><br/>
+                        <p>CATEGORY</p>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/addCategory}">Add Category</a></li>
+                        <li><a th:href="@{/addItems}">Edit Category</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button"
+                            data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-plus"></span><br/>
+                        <p>INVENTORY</p>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/inventory(page=0)}">View Inventory</a></li>
+                        <li><a href="#">Edit Products</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+<div th:replace="common/common :: body-bottom-scripts"/>
+</div>
+</body>
+</html>

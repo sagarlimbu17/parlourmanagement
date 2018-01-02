@@ -64,6 +64,7 @@
           <element id="library" level="project" name="Maven: javax.validation:validation-api:1.1.0.Final" />
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-java8:5.2.10.Final" />
           <element id="library" level="project" name="Maven: joda-time:joda-time:2.9.9" />
+          <element id="library" level="project" name="Maven: com.heroku.sdk:heroku-jdbc:0.1.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">
