@@ -164,7 +164,11 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>2.3</version>
+          <version>3.0.2</version>
+          <configuration>
+            <scope>1.8</scope>
+            <target>1.8</target>
+          </configuration>
           <executions>
             <execution>
               <phase>package</phase>
