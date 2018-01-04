@@ -84,7 +84,7 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
     }
 
 
-    @Bean(name = "dataSource")
+   /* @Bean(name = "dataSource")
     public BasicDataSource dataSource(){
         BasicDataSource ds = new BasicDataSource();
         ds.setDriverClassName("com.mysql.jdbc.Driver");
@@ -93,9 +93,9 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
         ds.setPassword("11devils");
         return  ds;
 
-    }
+    }*/
 
-    /*@Bean
+    @Bean
     public DataSource dataSource() throws URISyntaxException {
         URI dbUri = new URI(System.getenv("CLEARDB_DATABASE_URL"));
 
@@ -109,7 +109,7 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
         dataSource.setPassword(password);
 
         return dataSource;
-    }*/
+    }
 
     @Bean
     public ViewResolver viewResolver() {
