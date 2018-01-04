@@ -99,15 +99,14 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
     public DataSource dataSource() throws URISyntaxException {
         URI dbUri = new URI(System.getenv("CLEARDB_DATABASE_URL"));
 
-        String username = "muszwyvavhzyvx";
-        String password = "b21d7e5a120ba7d56699c6861368875dd984cb8ee57382078488905efb04e7df";
-        String dbUrl = "postgres://muszwyvavhzyvx:b21d7e5a120ba7d56699c6861368875dd984cb8ee57382078488905efb04e7df@ec2-54-228-251-254.eu-west-1.compute.amazonaws.com:5432/d88hei90ftu5li";
+        String username = dbUri.getUserInfo().split(":")[0];
+        String password = dbUri.getUserInfo().split(":")[1];
+        String dbUrl = "jdbc:mysql://eu-cdbr-west-01.cleardb.com:3306/heroku_eb3825f7cae7006?reconnect=true";
 
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setUrl(dbUrl);
         dataSource.setUsername(username);
         dataSource.setPassword(password);
-        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 
         return dataSource;
     }
