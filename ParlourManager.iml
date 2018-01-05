@@ -92,6 +92,9 @@
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-java8:5.2.10.Final" level="project" />
     <orderEntry type="library" name="Maven: joda-time:joda-time:2.9.9" level="project" />
     <orderEntry type="library" name="Maven: com.heroku.sdk:heroku-jdbc:0.1.0" level="project" />
-    <orderEntry type="library" name="Maven: org.postgresql:postgresql:9.4-1201-jdbc4" level="project" />
+    <orderEntry type="library" name="Maven: org.postgresql:postgresql:9.4.1212" level="project" />
+    <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:2.6.0" level="project" />
+    <orderEntry type="library" name="Maven: org.jscience:jscience:4.3.1" level="project" />
+    <orderEntry type="library" name="Maven: org.javolution:javolution:5.2.3" level="project" />
   </component>
 </module>

@@ -17,12 +17,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7403f53-fa47-4d5a-b70f-b4d0a28c8ab3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/de235779-0a50-4f07-a9e0-032449c0c55d.xml" afterPath="" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_2_6_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javolution_javolution_5_2_3.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jscience_jscience_4_3_1.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ParlourManager_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/ParlourManager_war_exploded.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_9_4_1201_jdbc4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_9_4_1212.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lashes/config/AppConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/lashes/config/AppConfig.java" />
+      <change beforePath="$PROJECT_DIR$/ParlourManager.iml" afterPath="$PROJECT_DIR$/ParlourManager.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -75,7 +76,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="463">
@@ -99,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppConfig.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AppConfig.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lashes/config/AppConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="103" column="114" lean-forward="false" selection-start-line="103" selection-start-column="114" selection-end-line="103" selection-end-column="114" />
+            <state relative-caret-position="136">
+              <caret line="99" column="67" lean-forward="true" selection-start-line="99" selection-start-column="67" selection-end-line="99" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -113,7 +114,7 @@
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9f394469-5053-4698-b3d8-1dd407e6bfee/console.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="13" lean-forward="true" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+              <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -123,7 +124,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lashes/entities/User.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+              <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -257,8 +258,8 @@
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/de235779-0a50-4f07-a9e0-032449c0c55d/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9f394469-5053-4698-b3d8-1dd407e6bfee/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lashes/config/AppConfig.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lashes/config/AppConfig.java" />
       </list>
     </option>
   </component>
@@ -751,7 +752,7 @@
       <workItem from="1514816542624" duration="6639000" />
       <workItem from="1514910677602" duration="12096000" />
       <workItem from="1515075194887" duration="7314000" />
-      <workItem from="1515116854608" duration="2224000" />
+      <workItem from="1515116854608" duration="2925000" />
     </task>
     <task id="LOCAL-00001" summary="fourth commit">
       <created>1509357051064</created>
@@ -893,11 +894,18 @@
       <option name="project" value="LOCAL" />
       <updated>1515078895463</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="auto create db">
+      <created>1515122923863</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1515122923865</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="523568000" />
+    <option name="totallyTimeSpent" value="524269000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1381,7 +1389,7 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9f394469-5053-4698-b3d8-1dd407e6bfee/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="true" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1397,15 +1405,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lashes/entities/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lashes/config/AppConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="103" column="114" lean-forward="false" selection-start-line="103" selection-start-column="114" selection-end-line="103" selection-end-column="114" />
+          <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -1414,6 +1414,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="463">
           <caret line="176" column="17" lean-forward="false" selection-start-line="176" selection-start-column="17" selection-end-line="176" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lashes/config/AppConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="99" column="67" lean-forward="true" selection-start-line="99" selection-start-column="67" selection-end-line="99" selection-end-column="67" />
           <folding />
         </state>
       </provider>
