@@ -77,31 +77,31 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
         Properties prop = new Properties();
         prop.put("hibernate.format_sql","true");
         prop.put("hibernate.show_sql","true");
-        prop.put("hibernate.dialect","org.hibernate.dialect.MySQL5Dialect");
+        prop.put("hibernate.dialect","org.hibernate.dialect.PostgreSQLDialect");
         prop.setProperty("hibernate.hbm2ddl.auto","create");
         return prop;
 
     }
 
 
-   /* @Bean(name = "dataSource")
+    @Bean(name = "dataSource")
     public BasicDataSource dataSource(){
         BasicDataSource ds = new BasicDataSource();
-        ds.setDriverClassName("com.mysql.jdbc.Driver");
-        ds.setUrl("jdbc:mysql://localhost:3306/lashes");
-        ds.setUsername("root");
-        ds.setPassword("11devils");
+        ds.setDriverClassName("org.postgresql.Driver");
+        ds.setUrl("jdbc:postgresql://localhost:5432/lashes");
+        ds.setUsername("postgres");
+        ds.setPassword("postgres");
         return  ds;
 
-    }*/
+    }
 
-    @Bean
+   /* @Bean
     public DataSource dataSource() throws URISyntaxException {
         URI dbUri = new URI(System.getenv("DATABASE_URL"));
 
         String username = dbUri.getUserInfo().split(":")[0];
         String password = dbUri.getUserInfo().split(":")[1];
-        String dbUrl = "postgres://vfrvfnopxrfpkp:4d3140d051665c8baf51fb26a40ab65d684804def82ce81d705a8b123b1bba89@ec2-54-227-250-33.compute-1.amazonaws.com:5432/dc4hvp7h4d19uq";
+        String dbUrl = "postgres://ec2-54-227-250-33.compute-1.amazonaws.com:5432/dc4hvp7h4d19uq";
 
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setUrl(dbUrl);
@@ -110,7 +110,7 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
         dataSource.setDriverClassName("org.postgresql.Driver");
 
         return dataSource;
-    }
+    }*/
 
     @Bean
     public ViewResolver viewResolver() {
