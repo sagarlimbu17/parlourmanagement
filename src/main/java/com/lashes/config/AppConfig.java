@@ -101,7 +101,7 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 
         String username = dbUri.getUserInfo().split(":")[0];
         String password = dbUri.getUserInfo().split(":")[1];
-        String dbUrl = "postgres://fdqycfslyarrhv:16199e15a6fc0ea60f8152ffa202be50ae0a128a8fa09f133b4b92f9953489d7@ec2-107-22-183-40.compute-1.amazonaws.com:5432/db0nim0lvgm26u";
+        String dbUrl = "postgres://vfrvfnopxrfpkp:4d3140d051665c8baf51fb26a40ab65d684804def82ce81d705a8b123b1bba89@ec2-54-227-250-33.compute-1.amazonaws.com:5432/dc4hvp7h4d19uq";
 
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setUrl(dbUrl);
