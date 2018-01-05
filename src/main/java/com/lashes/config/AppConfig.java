@@ -107,6 +107,7 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
         dataSource.setUrl(dbUrl);
         dataSource.setUsername(username);
         dataSource.setPassword(password);
+        dataSource.setDriverClassName("org.postgresql.Driver");
 
         return dataSource;
     }
