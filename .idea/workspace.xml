@@ -18,9 +18,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b7403f53-fa47-4d5a-b70f-b4d0a28c8ab3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4d76d5b3-a380-4ffe-a452-d64ccc4defcb.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9f394469-5053-4698-b3d8-1dd407e6bfee.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -769,7 +766,7 @@
       <workItem from="1515075194887" duration="7314000" />
       <workItem from="1515116854608" duration="4150000" />
       <workItem from="1515130351743" duration="4658000" />
-      <workItem from="1515136556903" duration="1045000" />
+      <workItem from="1515136556903" duration="1063000" />
     </task>
     <task id="LOCAL-00001" summary="fourth commit">
       <created>1509357051064</created>
@@ -932,11 +929,18 @@
       <option name="project" value="LOCAL" />
       <updated>1515134922592</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="auto create db">
+      <created>1515137616323</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1515137616323</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="531197000" />
+    <option name="totallyTimeSpent" value="531215000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
