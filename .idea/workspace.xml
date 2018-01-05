@@ -17,13 +17,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7403f53-fa47-4d5a-b70f-b4d0a28c8ab3" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_2_6_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javolution_javolution_5_2_3.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jscience_jscience_4_3_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ParlourManager_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/ParlourManager_war_exploded.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_9_4_1201_jdbc4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_9_4_1212.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/ParlourManager.iml" afterPath="$PROJECT_DIR$/ParlourManager.iml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lashes/config/AppConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/lashes/config/AppConfig.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -103,8 +97,8 @@
       <file leaf-file-name="AppConfig.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lashes/config/AppConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="99" column="67" lean-forward="true" selection-start-line="99" selection-start-column="67" selection-end-line="99" selection-end-column="67" />
+            <state relative-caret-position="119">
+              <caret line="101" column="30" lean-forward="true" selection-start-line="101" selection-start-column="30" selection-end-line="101" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -752,7 +746,7 @@
       <workItem from="1514816542624" duration="6639000" />
       <workItem from="1514910677602" duration="12096000" />
       <workItem from="1515075194887" duration="7314000" />
-      <workItem from="1515116854608" duration="2925000" />
+      <workItem from="1515116854608" duration="3142000" />
     </task>
     <task id="LOCAL-00001" summary="fourth commit">
       <created>1509357051064</created>
@@ -905,7 +899,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="524269000" />
+    <option name="totallyTimeSpent" value="524486000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1420,8 +1414,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lashes/config/AppConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="99" column="67" lean-forward="true" selection-start-line="99" selection-start-column="67" selection-end-line="99" selection-end-column="67" />
+        <state relative-caret-position="119">
+          <caret line="101" column="30" lean-forward="true" selection-start-line="101" selection-start-column="30" selection-end-line="101" selection-end-column="30" />
           <folding />
         </state>
       </provider>
