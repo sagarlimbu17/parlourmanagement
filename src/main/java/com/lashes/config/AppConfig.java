@@ -101,7 +101,7 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 
         String username = dbUri.getUserInfo().split(":")[0];
         String password = dbUri.getUserInfo().split(":")[1];
-        String dbUrl = "jdbc:mysql://us-cdbr-iron-east-05.cleardb.net:3306/heroku_d60637b3b2306b0?reconnect=true";
+        String dbUrl = "postgres://fdqycfslyarrhv:16199e15a6fc0ea60f8152ffa202be50ae0a128a8fa09f133b4b92f9953489d7@ec2-107-22-183-40.compute-1.amazonaws.com:5432/db0nim0lvgm26u";
 
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setUrl(dbUrl);
