@@ -84,7 +84,7 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
     }
 
 
-    @Bean(name = "dataSource")
+    /*@Bean(name = "dataSource")
     public BasicDataSource dataSource(){
         BasicDataSource ds = new BasicDataSource();
         ds.setDriverClassName("org.postgresql.Driver");
@@ -93,9 +93,9 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
         ds.setPassword("postgres");
         return  ds;
 
-    }
+    }*/
 
-   /* @Bean
+    @Bean
     public DataSource dataSource() throws URISyntaxException {
         URI dbUri = new URI(System.getenv("DATABASE_URL"));
 
@@ -110,7 +110,7 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
         dataSource.setDriverClassName("org.postgresql.Driver");
 
         return dataSource;
-    }*/
+    }
 
     @Bean
     public ViewResolver viewResolver() {
