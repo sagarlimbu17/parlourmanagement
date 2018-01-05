@@ -101,7 +101,7 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 
         String username = dbUri.getUserInfo().split(":")[0];
         String password = dbUri.getUserInfo().split(":")[1];
-        String dbUrl = "jdbc:mysql://eu-cdbr-west-01.cleardb.com:3306/heroku_eb3825f7cae7006?reconnect=true";
+        String dbUrl = "jdbc:mysql://us-cdbr-iron-east-05.cleardb.net:3306/heroku_d60637b3b2306b0?reconnect=true";
 
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setUrl(dbUrl);

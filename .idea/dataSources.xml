@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="heroku_eb3825f7cae7006@eu-cdbr-west-01.cleardb.com" uuid="de235779-0a50-4f07-a9e0-032449c0c55d">
+    <data-source source="LOCAL" name="lashes@localhost" uuid="4d76d5b3-a380-4ffe-a452-d64ccc4defcb">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://eu-cdbr-west-01.cleardb.com:3306/heroku_eb3825f7cae7006?reconnect=true</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/lashes</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />
@@ -15,11 +15,11 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="lashes@localhost" uuid="4d76d5b3-a380-4ffe-a452-d64ccc4defcb">
+    <data-source source="LOCAL" name="heroku_d60637b3b2306b0@us-cdbr-iron-east-05.cleardb.net" uuid="9f394469-5053-4698-b3d8-1dd407e6bfee">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/lashes</jdbc-url>
+      <jdbc-url>jdbc:mysql://us-cdbr-iron-east-05.cleardb.net:3306/heroku_d60637b3b2306b0?reconnect=true</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />
