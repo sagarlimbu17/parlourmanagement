@@ -34,6 +34,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.sql.Connection;
 import java.util.Properties;
 
 @Configuration
@@ -95,12 +96,17 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 
     }*/
 
+
     @Bean
     public DataSource dataSource() throws URISyntaxException {
         URI dbUri = new URI(System.getenv("DATABASE_URL"));
+        System.out.println(dbUri);
 
         String username = dbUri.getUserInfo().split(":")[0];
         String password = dbUri.getUserInfo().split(":")[1];
+        System.out.println("the username is : "+username);
+        System.out.println("the password is : "+password);
+
         String dbUrl = "postgres://ec2-54-227-250-33.compute-1.amazonaws.com:5432/dc4hvp7h4d19uq";
 
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
