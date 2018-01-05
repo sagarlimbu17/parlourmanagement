@@ -24,7 +24,6 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-orm:4.3.9.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.3.9.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.3.9.RELEASE" />
-          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:6.0.6" />
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-core:5.2.10.Final" />
           <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.3.0.Final" />
           <element id="library" level="project" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final" />
@@ -64,11 +63,7 @@
           <element id="library" level="project" name="Maven: javax.validation:validation-api:1.1.0.Final" />
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-java8:5.2.10.Final" />
           <element id="library" level="project" name="Maven: joda-time:joda-time:2.9.9" />
-          <element id="library" level="project" name="Maven: com.heroku.sdk:heroku-jdbc:0.1.0" />
           <element id="library" level="project" name="Maven: org.postgresql:postgresql:9.4.1212" />
-          <element id="library" level="project" name="Maven: com.zaxxer:HikariCP:2.6.0" />
-          <element id="library" level="project" name="Maven: org.jscience:jscience:4.3.1" />
-          <element id="library" level="project" name="Maven: org.javolution:javolution:5.2.3" />
         </element>
       </element>
       <element id="directory" name="META-INF">
