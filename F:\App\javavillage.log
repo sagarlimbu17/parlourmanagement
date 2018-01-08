@@ -77,3 +77,311 @@ Caused by: java.lang.NullPointerException
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
 	... 47 more
+2018-01-08 18:21:52 [localhost-startStop-1] INFO :: Root WebApplicationContext: initialization started
+2018-01-08 18:21:52 [localhost-startStop-1] INFO :: Refreshing Root WebApplicationContext: startup date [Mon Jan 08 18:21:52 NPT 2018]; root of context hierarchy
+2018-01-08 18:21:53 [localhost-startStop-1] INFO :: Registering annotated classes: [class com.lashes.config.AppConfig]
+2018-01-08 18:21:54 [localhost-startStop-1] INFO :: Bean 'appConfig' of type [com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$8d8b2b43] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-01-08 18:21:54 [localhost-startStop-1] WARN :: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in com.lashes.config.AppConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]: Factory method 'entityManagerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in com.lashes.config.AppConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.NullPointerException
+2018-01-08 18:21:54 [localhost-startStop-1] ERROR:: Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in com.lashes.config.AppConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]: Factory method 'entityManagerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in com.lashes.config.AppConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1078)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:857)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:443)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4743)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5207)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1419)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1409)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]: Factory method 'entityManagerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in com.lashes.config.AppConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 23 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in com.lashes.config.AppConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.obtainBeanInstanceFromFactory(ConfigurationClassEnhancer.java:389)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:361)
+	at com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$8d8b2b43.dataSource(<generated>)
+	at com.lashes.config.AppConfig.entityManagerFactory(AppConfig.java:56)
+	at com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$8d8b2b43.CGLIB$entityManagerFactory$5(<generated>)
+	at com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$8d8b2b43$$FastClassBySpringCGLIB$$6d0b3f7e.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358)
+	at com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$8d8b2b43.entityManagerFactory(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 24 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 46 more
+Caused by: java.lang.NullPointerException
+	at java.net.URI$Parser.parse(URI.java:3042)
+	at java.net.URI.<init>(URI.java:588)
+	at com.lashes.config.AppConfig.dataSource(AppConfig.java:102)
+	at com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$8d8b2b43.CGLIB$dataSource$7(<generated>)
+	at com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$8d8b2b43$$FastClassBySpringCGLIB$$6d0b3f7e.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358)
+	at com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$8d8b2b43.dataSource(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 47 more
+2018-01-08 18:23:47 [localhost-startStop-1] INFO :: Root WebApplicationContext: initialization started
+2018-01-08 18:23:47 [localhost-startStop-1] INFO :: Refreshing Root WebApplicationContext: startup date [Mon Jan 08 18:23:47 NPT 2018]; root of context hierarchy
+2018-01-08 18:23:47 [localhost-startStop-1] INFO :: Registering annotated classes: [class com.lashes.config.AppConfig]
+2018-01-08 18:23:48 [localhost-startStop-1] INFO :: Bean 'appConfig' of type [com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$34b577a8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-01-08 18:23:48 [localhost-startStop-1] WARN :: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in com.lashes.config.AppConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]: Factory method 'entityManagerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in com.lashes.config.AppConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.NullPointerException
+2018-01-08 18:23:48 [localhost-startStop-1] ERROR:: Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in com.lashes.config.AppConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]: Factory method 'entityManagerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in com.lashes.config.AppConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1078)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:857)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:443)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4743)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5207)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1419)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1409)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]: Factory method 'entityManagerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in com.lashes.config.AppConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 23 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in com.lashes.config.AppConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.obtainBeanInstanceFromFactory(ConfigurationClassEnhancer.java:389)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:361)
+	at com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$34b577a8.dataSource(<generated>)
+	at com.lashes.config.AppConfig.entityManagerFactory(AppConfig.java:56)
+	at com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$34b577a8.CGLIB$entityManagerFactory$7(<generated>)
+	at com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$34b577a8$$FastClassBySpringCGLIB$$bfad5544.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358)
+	at com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$34b577a8.entityManagerFactory(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 24 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 46 more
+Caused by: java.lang.NullPointerException
+	at java.net.URI$Parser.parse(URI.java:3042)
+	at java.net.URI.<init>(URI.java:588)
+	at com.lashes.config.AppConfig.dataSource(AppConfig.java:102)
+	at com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$34b577a8.CGLIB$dataSource$5(<generated>)
+	at com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$34b577a8$$FastClassBySpringCGLIB$$bfad5544.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358)
+	at com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$34b577a8.dataSource(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 47 more
+2018-01-08 18:24:24 [localhost-startStop-1] INFO :: Root WebApplicationContext: initialization started
+2018-01-08 18:24:24 [localhost-startStop-1] INFO :: Refreshing Root WebApplicationContext: startup date [Mon Jan 08 18:24:24 NPT 2018]; root of context hierarchy
+2018-01-08 18:24:24 [localhost-startStop-1] INFO :: Registering annotated classes: [class com.lashes.config.AppConfig]
+2018-01-08 18:24:25 [localhost-startStop-1] INFO :: Bean 'appConfig' of type [com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$c053e8db] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-01-08 18:24:25 [localhost-startStop-1] WARN :: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in com.lashes.config.AppConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]: Factory method 'entityManagerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in com.lashes.config.AppConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.NullPointerException
+2018-01-08 18:24:25 [localhost-startStop-1] ERROR:: Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in com.lashes.config.AppConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]: Factory method 'entityManagerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in com.lashes.config.AppConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1078)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:857)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:443)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4743)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5207)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1419)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1409)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]: Factory method 'entityManagerFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in com.lashes.config.AppConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 23 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in com.lashes.config.AppConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.obtainBeanInstanceFromFactory(ConfigurationClassEnhancer.java:389)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:361)
+	at com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$c053e8db.dataSource(<generated>)
+	at com.lashes.config.AppConfig.entityManagerFactory(AppConfig.java:56)
+	at com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$c053e8db.CGLIB$entityManagerFactory$2(<generated>)
+	at com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$c053e8db$$FastClassBySpringCGLIB$$197b7c75.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358)
+	at com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$c053e8db.entityManagerFactory(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 24 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.sql.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 46 more
+Caused by: java.lang.NullPointerException
+	at java.net.URI$Parser.parse(URI.java:3042)
+	at java.net.URI.<init>(URI.java:588)
+	at com.lashes.config.AppConfig.dataSource(AppConfig.java:102)
+	at com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$c053e8db.CGLIB$dataSource$5(<generated>)
+	at com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$c053e8db$$FastClassBySpringCGLIB$$197b7c75.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358)
+	at com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$c053e8db.dataSource(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 47 more
+2018-01-08 18:25:44 [localhost-startStop-1] INFO :: Root WebApplicationContext: initialization started
+2018-01-08 18:25:44 [localhost-startStop-1] INFO :: Refreshing Root WebApplicationContext: startup date [Mon Jan 08 18:25:44 NPT 2018]; root of context hierarchy
+2018-01-08 18:25:44 [localhost-startStop-1] INFO :: Registering annotated classes: [class com.lashes.config.AppConfig]
+2018-01-08 18:25:45 [localhost-startStop-1] INFO :: Bean 'appConfig' of type [com.lashes.config.AppConfig$$EnhancerBySpringCGLIB$$1c43d0f1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-01-08 18:25:46 [localhost-startStop-1] INFO :: Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-01-08 18:25:46 [localhost-startStop-1] INFO :: HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-01-08 18:25:46 [localhost-startStop-1] INFO :: HHH000412: Hibernate Core {5.2.10.Final}
+2018-01-08 18:25:46 [localhost-startStop-1] INFO :: HHH000206: hibernate.properties not found
+2018-01-08 18:25:47 [localhost-startStop-1] INFO :: HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-01-08 18:25:47 [localhost-startStop-1] INFO :: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2018-01-08 18:25:48 [localhost-startStop-1] INFO :: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2018-01-08 18:25:48 [localhost-startStop-1] INFO :: HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@488231f0
+2018-01-08 18:25:49 [localhost-startStop-1] INFO :: HV000001: Hibernate Validator 5.4.1.Final
+2018-01-08 18:25:52 [localhost-startStop-1] INFO :: HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@5d5e2fe3'
+2018-01-08 18:25:52 [localhost-startStop-1] INFO :: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Creating filter chain: Ant [pattern='/createBill'], []
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Creating filter chain: Ant [pattern='/getExcelReport'], []
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@30215c3a, org.springframework.security.web.context.SecurityContextPersistenceFilter@caa6228, org.springframework.security.web.header.HeaderWriterFilter@74ed5543, org.springframework.security.web.csrf.CsrfFilter@6e005651, org.springframework.security.web.authentication.logout.LogoutFilter@41d40c52, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4a994fd5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4a48244, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7affad97, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@161b70d4, org.springframework.security.web.session.SessionManagementFilter@6871d8d, org.springframework.security.web.access.ExceptionTranslationFilter@23cd187c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6d55f7a0]
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/addCategory],methods=[POST]}" onto public java.lang.String com.lashes.controller.AppController.addCategory(com.lashes.entities.Category,org.springframework.ui.Model)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/addCategory]}" onto public java.lang.String com.lashes.controller.AppController.addCategory()
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/itemsmgmt]}" onto public java.lang.String com.lashes.controller.AppController.itemsmgmt()
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/changePassword],methods=[POST]}" onto public java.lang.String com.lashes.controller.AppController.changePassword(java.lang.String,java.lang.String,java.lang.String,org.springframework.ui.Model)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/registerProduct]}" onto public java.lang.String com.lashes.controller.AppController.addItems(org.springframework.ui.Model)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/registerProduct],methods=[POST]}" onto public java.lang.String com.lashes.controller.AppController.registerProduct(com.lashes.entities.RgProduct,org.springframework.ui.Model)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/admin/registerProduct],methods=[POST]}" onto public java.lang.String com.lashes.controller.AppController.registerProduct(com.lashes.entities.Product,org.springframework.ui.Model)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/admin/addProduct]}" onto public java.lang.String com.lashes.controller.AppController.addProduct(org.springframework.ui.Model)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/admin/addProduct],methods=[POST]}" onto public java.lang.String com.lashes.controller.AppController.addProducts(org.springframework.ui.Model,com.lashes.entities.Product)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/getProductDetailsByCategory]}" onto public java.util.List<com.lashes.entities.RgProduct> com.lashes.controller.AppController.getProductDetails(java.lang.String)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/getProductByProductName]}" onto public org.springframework.http.ResponseEntity<com.lashes.entities.RgProduct> com.lashes.controller.AppController.getProductDetailsByProductName(java.lang.String)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/admin/billing]}" onto public java.lang.String com.lashes.controller.AppController.createBills(org.springframework.ui.Model)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/inventory]}" onto public java.lang.String com.lashes.controller.AppController.showPage(org.springframework.ui.Model,int)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/registerService]}" onto public java.lang.String com.lashes.controller.AppController.registerService(org.springframework.ui.Model)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/serviceBilling]}" onto public java.lang.String com.lashes.controller.AppController.serviceBilling()
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/serviceBilling],methods=[POST]}" onto public java.lang.String com.lashes.controller.AppController.serviceBillingPost(com.lashes.entities.Sales,org.springframework.ui.Model)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/report],methods=[POST],params=[action=getReport]}" onto public java.lang.String com.lashes.controller.AppController.getReport(com.lashes.models.SalesReportMapping,org.springframework.validation.BindingResult,org.springframework.ui.Model) throws java.text.ParseException
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/report],methods=[POST],params=[action=downloadExcel]}" onto public org.springframework.web.servlet.ModelAndView com.lashes.controller.AppController.salesReport(com.lashes.models.SalesReportMapping)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/finance]}" onto public java.lang.String com.lashes.controller.AppController.finanace(org.springframework.ui.Model)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/financeanalysis]}" onto public java.lang.String com.lashes.controller.AppController.financeanalysis(org.springframework.ui.Model) throws java.text.ParseException
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/saveFinance],methods=[POST]}" onto public java.lang.String com.lashes.controller.AppController.postFinance(com.lashes.entities.Finance,org.springframework.ui.Model)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/createNewUser]}" onto public java.lang.String com.lashes.controller.AppController.newUser()
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/createNewUser],methods=[POST]}" onto public java.lang.String com.lashes.controller.AppController.createNewUser(org.springframework.ui.Model,com.lashes.models.CreateUser)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/editUsers]}" onto public java.lang.String com.lashes.controller.AppController.editUsers(org.springframework.ui.Model)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/viewSingleUser]}" onto public java.lang.String com.lashes.controller.AppController.viewSingleUser(java.lang.Long,org.springframework.ui.Model)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/editSingleUser],methods=[POST]}" onto public java.lang.String com.lashes.controller.AppController.editSingleUser(com.lashes.models.EditUser,org.springframework.ui.Model)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/deleteSingleUser]}" onto public java.lang.String com.lashes.controller.AppController.deleteUser(org.springframework.ui.Model,java.lang.Long)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/activateUser]}" onto public java.lang.String com.lashes.controller.AppController.activateUser(org.springframework.ui.Model)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/activateSingleUser]}" onto public java.lang.String com.lashes.controller.AppController.activateUser(org.springframework.ui.Model,java.lang.Long)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/editProduct]}" onto public java.lang.String com.lashes.controller.AppController.editProd(org.springframework.ui.Model)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/editProduct],methods=[POST]}" onto public java.lang.String com.lashes.controller.AppController.editProduct(org.springframework.ui.Model,java.lang.String)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/editSingleProduct]}" onto public java.lang.String com.lashes.controller.AppController.editSingleProduct(org.springframework.ui.Model,java.lang.Long)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/editSingleProduct],methods=[POST]}" onto public java.lang.String com.lashes.controller.AppController.editSingleProductPost(org.springframework.ui.Model,com.lashes.entities.RgProduct)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/password]}" onto public java.lang.String com.lashes.controller.AppController.password(org.springframework.ui.Model)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/report]}" onto public java.lang.String com.lashes.controller.AppController.report(com.lashes.models.SalesReportMapping,org.springframework.ui.Model)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/listItems]}" onto public com.lashes.entities.Sales com.lashes.controller.BillController.getUsersForGrid(java.util.Map<java.lang.String, java.lang.String>)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/createBill],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.lashes.models.Status> com.lashes.controller.BillController.createBill(java.util.List<com.lashes.entities.Sales>,org.springframework.ui.Model)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/]}" onto public java.lang.String com.lashes.controller.HomeController.home()
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/admin]}" onto public java.lang.String com.lashes.controller.HomeController.admin()
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/logout],methods=[GET]}" onto public java.lang.String com.lashes.controller.HomeController.logoutPage(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/403]}" onto public java.lang.String com.lashes.controller.HomeController.exceptionHandlers()
+2018-01-08 18:25:54 [localhost-startStop-1] INFO :: Mapped "{[/login || /login?logout]}" onto public java.lang.String com.lashes.controller.HomeController.login()
+2018-01-08 18:25:55 [localhost-startStop-1] INFO :: Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-01-08 18:25:55 [localhost-startStop-1] INFO :: Looking for @ControllerAdvice: Root WebApplicationContext: startup date [Mon Jan 08 18:25:44 NPT 2018]; root of context hierarchy
+2018-01-08 18:25:56 [localhost-startStop-1] INFO :: Root WebApplicationContext: initialization completed in 11885 ms
+2018-01-08 18:25:56 [localhost-startStop-1] INFO :: FrameworkServlet 'dispatcher': initialization started
+2018-01-08 18:25:56 [localhost-startStop-1] INFO :: Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jan 08 18:25:56 NPT 2018]; parent: Root WebApplicationContext
+2018-01-08 18:25:56 [localhost-startStop-1] INFO :: FrameworkServlet 'dispatcher': initialization completed in 82 ms
+2018-01-08 18:26:44 [localhost-startStop-2] INFO :: Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Mon Jan 08 18:25:56 NPT 2018]; parent: Root WebApplicationContext
+2018-01-08 18:26:44 [localhost-startStop-2] INFO :: Closing Root WebApplicationContext: startup date [Mon Jan 08 18:25:44 NPT 2018]; root of context hierarchy
+2018-01-08 18:26:44 [localhost-startStop-2] INFO :: Closing JPA EntityManagerFactory for persistence unit 'default'

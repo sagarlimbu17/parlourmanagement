@@ -10,11 +10,11 @@
       <user-name>postgres</user-name>
       <introspection-schemas>lashes:public</introspection-schemas>
     </data-source>
-    <data-source name="dc4hvp7h4d19uq@ec2-54-227-250-33.compute-1.amazonaws.com" uuid="0917fd33-67fe-4ce8-b090-0c5f86a5a7aa">
+    <data-source name="d7tnikeeo9k246@ec2-50-19-126-219.compute-1.amazonaws.com" uuid="16868403-8448-418a-9b36-fc912b25693c">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
       <secret-storage>master_key</secret-storage>
       <first-sync>true</first-sync>
-      <user-name>vfrvfnopxrfpkp</user-name>
+      <user-name>qqnptbkgogjlta</user-name>
     </data-source>
   </component>
 </project>

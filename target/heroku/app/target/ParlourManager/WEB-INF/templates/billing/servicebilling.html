@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js"
+      xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Lashes Makeup Parlour Management System</title>
+    <link th:href="@{/static/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/static/css/common.css}" rel="stylesheet" type="text/css"/>
+
+    <style>
+        .glyphicon{
+            font-size:10px;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="common/common :: common-navbar"/>
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-offset-1 col-md-6">
+            <div class="panel-group">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <p style="text-align: center;">CREATE A NEW BILL</p>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" th:action="@{/serviceBilling}" method="post">
+
+                            <div class="form-group">
+                                <div th:if="${serviceBillingCompleted}">
+                                    <div class="alert alert-success">
+                                        <p>New bill successfully created</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="salesType">Billing Type:</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" id="salesType" name="salesType">
+                                        <option value="service">Service</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="serviceName">Name:</label>
+                                <div class="col-sm-10" >
+                                    <input type="text" class="form-control"
+                                           placeholder="Service Name" name="name" id="serviceName">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="costPrice">Est. Cost Price:</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control"
+                                           placeholder="Estimated Cost Price" name="totalCostPrice" id="costPrice">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="servicePrice">Price:</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control"
+                                           placeholder="Product Price" name="totalPrice" id="servicePrice">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-default">Create Service Bill</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script th:src="@{/static/js/jquery-3.2.1.min.js}"></script>
+    <script th:src="@{/static/js/bootstrap.min.js}"></script>
+
+</div>
+
+</body>
+</html>
