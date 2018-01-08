@@ -17,7 +17,7 @@ function getProductDetails() {
         document.querySelector("#productVendor").value='no vendor';
     }
 
-    fetch("http://localhost:5080/getProductDetailsByCategory?category="+category)
+    fetch("https://allinonemgmtapp.herokuapp.com/getProductDetailsByCategory?category="+category)
         .then((res) => res.json())
         .then((data) => {
         console.log(data)
@@ -41,7 +41,7 @@ function getProductDetails() {
 function getProductPrice() {
     let sel = document.querySelector("#productName");
     let selValue = sel.options[sel.selectedIndex].text;
-    fetch("http://localhost:5080/getProductByProductName?productName="+selValue)
+    fetch("https://allinonemgmtapp.herokuapp.com/getProductByProductName?productName="+selValue)
         .then((res) => res.json())
 .then((data) => {
     data.forEach(function (t) {

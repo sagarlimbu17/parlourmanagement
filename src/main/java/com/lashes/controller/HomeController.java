@@ -4,6 +4,7 @@ package com.lashes.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenBasedRememberMeServices;
 import org.springframework.stereotype.Controller;
@@ -18,7 +19,10 @@ public class HomeController {
 
     @RequestMapping("/")
     public String home(){
+        String password="A0ne11C0rp@1";
+        //System.out.println("first admin password "+new BCryptPasswordEncoder().encode(password));
         return  "home";
+
     }
 
     @RequestMapping("/admin")

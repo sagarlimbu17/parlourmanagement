@@ -349,7 +349,6 @@ public class AppController {
 
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         String encryptedPassword = encoder.encode(user.getPassword());
-        System.out.println(encryptedPassword);
 
         User user1 = new User();
         user1.setUsername(user.getUsername());

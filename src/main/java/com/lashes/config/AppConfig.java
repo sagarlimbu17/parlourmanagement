@@ -79,13 +79,13 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
         prop.put("hibernate.format_sql","true");
         prop.put("hibernate.show_sql","true");
         prop.put("hibernate.dialect","org.hibernate.dialect.PostgreSQLDialect");
-        prop.setProperty("hibernate.hbm2ddl.auto","create");
+        prop.setProperty("hibernate.hbm2ddl.auto","update");
         return prop;
 
     }
 
 
-    /*@Bean(name = "dataSource")
+    @Bean(name = "dataSource")
     public BasicDataSource dataSource(){
         BasicDataSource ds = new BasicDataSource();
         ds.setDriverClassName("org.postgresql.Driver");
@@ -94,10 +94,10 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
         ds.setPassword("postgres");
         return  ds;
 
-    }*/
+    }
 
 
-    @Bean
+   /* @Bean
     public DataSource dataSource() throws URISyntaxException {
         URI dbUri = new URI(System.getenv("DATABASE_URL"));
         System.out.println(dbUri);
@@ -117,7 +117,7 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 
         return dataSource;
     }
-
+*/
     @Bean
     public ViewResolver viewResolver() {
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
