@@ -84,6 +84,7 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 
     }
 
+/*
 
     @Bean(name = "dataSource")
     public BasicDataSource dataSource(){
@@ -95,9 +96,10 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
         return  ds;
 
     }
+*/
 
 
-   /* @Bean
+    @Bean
     public DataSource dataSource() throws URISyntaxException {
         URI dbUri = new URI(System.getenv("DATABASE_URL"));
         System.out.println(dbUri);
@@ -117,7 +119,7 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 
         return dataSource;
     }
-*/
+
     @Bean
     public ViewResolver viewResolver() {
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
