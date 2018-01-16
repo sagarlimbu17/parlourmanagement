@@ -1,5 +1,6 @@
 
 var cart=[];
+//var gTotal = 0;
 
 function Item(category,name,price,quantity,vendor,totalPrice,salesType){
         this.category= category,
@@ -45,8 +46,9 @@ function addProductToCart(event){
     cart.push(cartItem);
     console.log(cart);
     saveCartToLocal();
+    //gTotal = grandTotal();
     displayCart();
-    displayCheckoutButton();i
+    displayCheckoutButton();
 
 }
 
@@ -74,7 +76,7 @@ function  displayCart() {
                 </td>
             </tr>`;
     }
-    var grandTotalValue = grandTotal();
+    //gTotal = grandTotal();
 
     document.getElementById("table_body").innerHTML=output;
     document.getElementById("grand_total").innerHTML="<b>Grand Total:</b> "+grandTotal();
@@ -149,6 +151,7 @@ function createBills(e){
     var confirmButton = document.getElementById("confirmButton");
     var modal_total =document.getElementById("modal_total");
     console.log("we are fetching api")
+/*    https://allinonemgmtapp.herokuapp.com/createBill*/
     fetch('https://allinonemgmtapp.herokuapp.com/createBill',{
         method:'POST',
         headers:{
@@ -170,6 +173,8 @@ function createBills(e){
         })
 }
 
+
+
 function viewCartOnModal(e){
 
     var cartArray = listCart();
@@ -187,9 +192,25 @@ function viewCartOnModal(e){
                 </td>
             </tr>`;
     }
-    var grandTotalValue = grandTotal();
 
     document.getElementById("modal_cart").innerHTML=output;
     document.getElementById("modal_total").innerHTML="<b>Grand Total:</b> "+grandTotal();
 }
+
+
+//script for discount in billing
+/*$('#discBtn').on('click',function () {
+    var discP = document.getElementById('discountPer').value;
+    var grandTotalOnCart = grandTotal();
+
+    var discountAmount = (discP/100)*grandTotalOnCart;
+    var grandTotalAfterDis=grandTotal()-discountAmount;
+    gTotal = grandTotalAfterDis;
+    viewCartOnModal();
+
+})
+
+function grandTotalAfterDiscount(discount) {
+    return grandTotal()-discount;
+}*/
 

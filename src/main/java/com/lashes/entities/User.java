@@ -1,5 +1,6 @@
 package com.lashes.entities;
 
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -37,7 +38,11 @@ public class User {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name="users_id_seq",
+            sequenceName="users_id_seq",
+            allocationSize=1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+            generator="users_id_seq")
     public Long getId() {
         return id;
     }

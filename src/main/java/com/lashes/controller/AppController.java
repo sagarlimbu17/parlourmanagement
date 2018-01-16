@@ -8,8 +8,8 @@ import com.lashes.entities.Finance;
 import com.lashes.models.CreateUser;
 import com.lashes.models.EditUser;
 import com.lashes.models.SalesReportMapping;
+import com.lashes.models.Status;
 import com.lashes.services.*;
-import org.bouncycastle.ocsp.Req;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,6 +70,28 @@ public class AppController {
         return "category/category";
     }
 
+    @RequestMapping("/editCategory")
+    public String editCategory(Model model){
+        List<Category> categories = categoryService.getAllCategories("product");
+        model.addAttribute("categories",categories);
+        return "category/editcategory";
+    }
+
+    @RequestMapping("/editSingleCategory")
+    public String editSingleCategory(Model model,@RequestParam Long id){
+        model.addAttribute("category",categoryService.getSingleCategory(id));
+        return "category/editsinglecategory";
+    }
+
+    @RequestMapping(value = "/editCategory", method = RequestMethod.POST)
+    public String editCategoryAgainstDb(@ModelAttribute Category category,Model model){
+
+        categoryService.editCategory(category);
+        model.addAttribute("categoryEdited",true);
+        return "category/editsinglecategory";
+
+    }
+
     //items handlers
 
     @RequestMapping("/itemsmgmt")
@@ -111,6 +133,12 @@ public class AppController {
 
     }
 
+    @RequestMapping(value = "/createBill",method = RequestMethod.POST)
+    public ResponseEntity<Status> createBill(@RequestBody List<Sales> sales, Model model){
+        salesServices.createBill(sales);
+        return new ResponseEntity<Status>(HttpStatus.OK);
+    }
+
     public String getPrincipal(){
         String username = null;
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -124,14 +152,15 @@ public class AppController {
 
 
     @RequestMapping("/registerProduct")
-    public String addItems(Model model){
+    public String addItems(Model model,@ModelAttribute RgProduct rgProduct){
         List<Category> categories = categoryService.getAllCategories("product");
+        model.addAttribute("rgProduct",rgProduct);
         model.addAttribute("categories", categories);
         return "items/registerProduct";
     }
     //registering new products
 
-    @RequestMapping(value = "/admin/registerProduct", method = RequestMethod.POST)
+ /*   @RequestMapping(value = "/admin/registerProduct", method = RequestMethod.POST)
     public String registerProduct(@ModelAttribute("product")Product product, Model model){
         product.setAddedBy(getPrincipal());
         productService.addProduct(product);
@@ -139,23 +168,47 @@ public class AppController {
         model.addAttribute("categories", categories);
         model.addAttribute("productAdded",true);
         return "items/registerProduct";
+    }*/
+
+    @RequestMapping(value = "/registerProduct", method = RequestMethod.POST)
+    public String registerProduct(@ModelAttribute("rgProduct") @Valid RgProduct rgProduct,BindingResult bindingResult,Model model) {
+
+        if(bindingResult.hasErrors()){
+            List<Category> categories = categoryService.getAllCategories("product");
+            model.addAttribute("categories",categories);
+            model.addAttribute("rgProduct",rgProduct);
+            return "items/registerProduct";
+        }
+        productService.registerProduct(rgProduct);
+        model.addAttribute("productRegistered",true);
+        return "items/registerProduct";
     }
 
 
     @RequestMapping("/admin/addProduct")
-    public String addProduct(Model model){
+    public String addProduct(@ModelAttribute("product") Product product, Model model){
         List<Category> categories = categoryService.getAllCategories("product");
         model.addAttribute("categories",categories);
+        model.addAttribute("product",product);
         return "items/addProduct";
     }
 
 
     @RequestMapping(value = "/admin/addProduct", method = RequestMethod.POST)
-    public String addProducts(Model model, @ModelAttribute("product") Product product){
+    public String addProducts(Model model, @ModelAttribute("product") @Valid Product product,
+                              BindingResult bindingResult){
+        List<Category> categories = categoryService.getAllCategories("product");
+
+        if(bindingResult.hasErrors()){
+            model.addAttribute("categories",categories);
+            model.addAttribute("product",product);
+            return "items/addProduct";
+        }
+
         product.setAddedBy(getPrincipal());
 
         productService.addProduct(product);
-        List<Category> categories = categoryService.getAllCategories("product");
+
         model.addAttribute("categories",categories);
         model.addAttribute("productAdded",true);
         return "items/addProduct";
@@ -174,12 +227,7 @@ public class AppController {
         return res;
     }
 
-    @RequestMapping(value = "/registerProduct", method = RequestMethod.POST)
-    public String registerProduct(@ModelAttribute("rgProduct") RgProduct rgProduct,Model model){
-        productService.registerProduct(rgProduct);
-        model.addAttribute("productRegistered",true);
-        return "items/registerProduct";
-    }
+
 
 
     @RequestMapping("/admin/billing")
@@ -215,6 +263,7 @@ public class AppController {
 
     @RequestMapping(value = "/serviceBilling", method = RequestMethod.POST)
     public String serviceBillingPost(@ModelAttribute("sales")Sales sales,Model model){
+        sales.setSalesBy(getPrincipal());
         salesServices.createServiceBill(sales);
         model.addAttribute("serviceBillingCompleted",true);
         return "billing/servicebilling";
@@ -465,10 +514,6 @@ public class AppController {
         CustomDateEditor customDateEditor = new CustomDateEditor(dateFormat,true);
         binder.registerCustomEditor(Date.class,customDateEditor);
     }
-
-
-
-
 
 
 }

@@ -3,8 +3,12 @@ package com.lashes.entities;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
@@ -14,10 +18,18 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
+    @NotNull(message = "cannot be null")
+    @NotEmpty(message = "cannot be none")
     private String productName;
+
+    @NotEmpty(message = "cannot be none")
     private String productCategory;
+
     private double productPrice;
-    private int productQuantity;
+
+    @NotNull(message = "cannot be 0 or less")
+    private Integer productQuantity;
     private String addedBy;
     private String productVendor;
 
@@ -63,11 +75,11 @@ public class Product {
         this.productPrice = productPrice;
     }
 
-    public int getProductQuantity() {
+    public Integer getProductQuantity() {
         return productQuantity;
     }
 
-    public void setProductQuantity(int productQuantity) {
+    public void setProductQuantity(Integer productQuantity) {
         this.productQuantity = productQuantity;
     }
 

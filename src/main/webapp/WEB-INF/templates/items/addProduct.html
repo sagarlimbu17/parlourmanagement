@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col-md-offset-3 col-md-6">
             <h2>Add products and services</h2>
-            <form class="form-horizontal" id="productForm" th:action="@{/admin/addProduct}" method="post">
+            <form class="form-horizontal" th:object="${product}" id="productForm" th:action="@{/admin/addProduct}" method="post">
 
                 <div class="form-group">
                     <div th:if="${productAdded}">
@@ -30,9 +30,11 @@
                     <label class="control-label col-sm-2" for="category">Category:</label>
                     <div class="col-sm-10">
                         <select class="form-control" id="category" name="productCategory">
-                            <option value="none" selected="selected">None</option>
+                            <option value="" selected="selected">None</option>
                             <option th:name="productCategory"  th:each="cat : ${categories}" th:value="${cat.category}" th:text="${cat.category}"></option>
                         </select>
+                        <p th:if="${#fields.hasErrors('productCategory')}" class="label label-danger"
+                           th:errors="*{productCategory}"></p>
                     </div>
                 </div>
 
@@ -40,8 +42,10 @@
                     <label class="control-label col-sm-2" for="productName">Name:</label>
                     <div class="col-sm-10" >
                         <select  class="form-control" id="productName" name="productName">
-                            <option value="none" selected="selected">None</option>
+                            <option value="" selected="selected">None</option>
                         </select>
+                        <p th:if="${#fields.hasErrors('productName')}" class="label label-danger"
+                           th:errors="*{productName}"></p>
                     </div>
                 </div>
 
@@ -57,6 +61,8 @@
                     <div class="col-sm-10">
                         <input type="number" class="form-control" id="productQuantity"
                                placeholder="Quantity" name="productQuantity">
+                        <p th:if="${#fields.hasErrors('productQuantity')}" class="label label-danger"
+                           th:errors="*{productQuantity}"></p>
                     </div>
                 </div>
                 <div class="form-group">

@@ -1,6 +1,7 @@
 package com.lashes.dao;
 
 import com.lashes.entities.Finance;
+import com.lashes.entities.Sales;
 import org.joda.time.DateTime;
 import org.joda.time.Days;
 import org.springframework.stereotype.Repository;
@@ -13,6 +14,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 @Repository
 @Transactional
@@ -39,7 +41,7 @@ public class FinanceDaoImpl implements FinanceDao {
     }
 
     public Double getTotalCostPrice(){
-        Query query = em.createNativeQuery("SELECT sum(totalCostPrice) FROM  Sales where createdDate=curdate()");
+        Query query = em.createNativeQuery("SELECT sum(totalCostPrice) FROM  Sales where createdDate=now()");
         Double costPrice = (Double) query.getSingleResult();
         if(costPrice==null){
             return 0.0;
@@ -49,7 +51,7 @@ public class FinanceDaoImpl implements FinanceDao {
     }
 
     public Double getTotalSellingPrice(){
-        Query query = em.createNativeQuery("SELECT sum(totalPrice) FROM  Sales where createdDate=curdate()");
+        Query query = em.createNativeQuery("SELECT sum(totalPrice) FROM  Sales where createdDate=now()");
         Double sellingPrice = (Double) query.getSingleResult();
         if(sellingPrice ==  null){
             return 0.0;
@@ -67,6 +69,10 @@ public class FinanceDaoImpl implements FinanceDao {
     public Double profitPercent() {
         Double amount = getTotalSellingPrice()-getTotalCostPrice();
         System.out.println(amount);
+        if(amount==0.0 && getTotalCostPrice() ==0.0){
+            return 0.0;
+        }
+
         Double percent = (amount/getTotalCostPrice())*100;
         Double roundedPercent= Double.valueOf(Math.round(percent));
         System.out.println(roundedPercent);
@@ -83,11 +89,11 @@ public class FinanceDaoImpl implements FinanceDao {
         Date dTarget = finance.getTargetDate();
 
         //total sales from initial date to current date
-        Query query = em.createNativeQuery("select sum(totalPrice) from Sales where createdDate between :d and curDate()")
+        Query query = em.createNativeQuery("select sum(totalPrice) from Sales where createdDate between :d and now()")
                 .setParameter("d",d);
         Double totalCurrentSales = (Double) query.getSingleResult();
 
-        Query query1 = em.createNativeQuery("select sum(totalPrice) from Sales where createdDate=curDate()");
+        Query query1 = em.createNativeQuery("select sum(totalPrice) from Sales where createdDate=now()");
         Double totalSalesToday = (Double) query1.getSingleResult();
 
         if(totalCurrentSales==null || totalSalesToday==null){
@@ -140,11 +146,17 @@ public class FinanceDaoImpl implements FinanceDao {
                 cal1.get(Calendar.DAY_OF_YEAR)== cal2.get(Calendar.DAY_OF_YEAR);
 
         if(sameDay){
-            Query query = em.createNativeQuery("select sum(totalPrice) from Sales s where s.createdDate <=curdate()-1");
-            Double salesUptoYesterday = (Double)query.getSingleResult();
-            return salesUptoYesterday;
+            List<Sales> sales = em.createQuery("select s from Sales s").getResultList();
+            if(sales!=null || !sales.isEmpty()) {
+                Query query = em.createNativeQuery("select sum(totalPrice) from Sales s where s.createdDate <=current_date-1    ");
+                Double salesUptoYesterday = (Double) query.getSingleResult();
+                return salesUptoYesterday;
+            }
+            else {
+                return 0.0;
+            }
         }
-        Query query = em.createNativeQuery("select sum(totalPrice) from Sales s where s.createdDate BETWEEN :startDate and curdate()-1")
+        Query query = em.createNativeQuery("select sum(totalPrice) from Sales s where s.createdDate BETWEEN :startDate and now()-1")
                 .setParameter("startDate",startDate);
         Double salesYesterday = (Double) query.getSingleResult();
         return salesYesterday;

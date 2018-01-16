@@ -21,6 +21,8 @@ public class Sales {
     @Temporal(TemporalType.DATE)
     private Date createdDate;
 
+    private String salesBy;
+
     @PrePersist
     protected void onCreate() {
         createdDate = new Date();
@@ -102,7 +104,15 @@ public class Sales {
         this.salesType = salesType;
     }
 
-    public Sales(int salesId,String category, String name, String vendor, int quantity, Double totalPrice, String salesType, Date createdDate) {
+    public String getSalesBy() {
+        return salesBy;
+    }
+
+    public void setSalesBy(String salesBy) {
+        this.salesBy = salesBy;
+    }
+
+    public Sales(int salesId, String category, String name, String vendor, int quantity, Double totalPrice, String salesType, Date createdDate) {
         this.salesId=salesId;
         this.category = category;
         this.name = name;

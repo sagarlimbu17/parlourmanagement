@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="lashes@localhost [2]" uuid="3c74a6d5-c35f-4d57-96e5-cccf42597586">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/lashes</jdbc-url>
-    </data-source>
     <data-source source="LOCAL" name="d7tnikeeo9k246@ec2-50-19-126-219.compute-1.amazonaws.com" uuid="16868403-8448-418a-9b36-fc912b25693c">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://ec2-50-19-126-219.compute-1.amazonaws.com:5432/d7tnikeeo9k246</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="lashes@localhost" uuid="bf54164a-2c3d-4cb4-b43e-e60b7f2cc13c">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/lashes</jdbc-url>
     </data-source>
   </component>
 </project>

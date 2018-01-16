@@ -12,11 +12,12 @@ products.addEventListener('change',getProductPrice);
 function getProductDetails() {
 
     let category = document.getElementById("category").value;
-    if(category =='none'){
+    if(category ==''){
         document.querySelector("#productPrice").value= 0;
         document.querySelector("#productVendor").value='no vendor';
     }
 
+/*        */
     fetch("https://allinonemgmtapp.herokuapp.com/getProductDetailsByCategory?category="+category)
         .then((res) => res.json())
         .then((data) => {
@@ -41,6 +42,7 @@ function getProductDetails() {
 function getProductPrice() {
     let sel = document.querySelector("#productName");
     let selValue = sel.options[sel.selectedIndex].text;
+        /*https://allinonemgmtapp.herokuapp.com*/
     fetch("https://allinonemgmtapp.herokuapp.com/getProductByProductName?productName="+selValue)
         .then((res) => res.json())
 .then((data) => {

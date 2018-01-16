@@ -35,4 +35,17 @@ public class CategoryDaoImpl implements CategoryDao {
               .getResultList();
        return categories;
     }
+
+    @Override
+    public Category getSingleCategory(Long id) {
+        Category category = em.find(Category.class,id);
+        return category;
+    }
+
+    @Override
+    public void editCategory(Category category) {
+        Category category1 = em.find(Category.class,category.getId());
+        category1.setCategory(category.getCategory());
+        em.merge(category1);
+    }
 }

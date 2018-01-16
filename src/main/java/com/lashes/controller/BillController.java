@@ -7,6 +7,9 @@ import com.lashes.services.SalesServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -22,11 +25,7 @@ public class BillController {
     @Autowired
     private ReportServices reportServices;
 
-    @RequestMapping(value = "/createBill",method = RequestMethod.POST)
-    public ResponseEntity<Status> createBill(@RequestBody List<Sales> sales, Model model){
-        salesServices.createBill(sales);
-       return new ResponseEntity<Status>(HttpStatus.OK);
-    }
+
 
 
     @RequestMapping("/listItems")
@@ -35,8 +34,6 @@ public class BillController {
         return null;
         // ...
     }
-
-
 
 
 

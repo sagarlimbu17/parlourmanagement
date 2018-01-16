@@ -1,25 +1,44 @@
 package com.lashes.entities;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @Entity
+
 public class RgProduct {
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @NotEmpty(message = "name cannot be empty")
+    @Column(unique = true)
     private String productName;
+
+    @NotEmpty(message = "category cannot be empty")
     private String productCategory;
+
+    @Min(value = 1, message = "please enter valid cost price")
+    @NotNull(message = "please enter valid cost price")
     private Double costPrice;
+
+
+    @Min(value = 1, message = "please enter valid sellling price")
+    @NotNull(message = "please enter valid selling price")
     private Double sellingPrice;
 
     private Long finalStock;
+
+    @NotEmpty(message = "vedor name required")
     private String productVendor;
+
+    public RgProduct() {
+    }
 
     public Long getId() {
         return id;

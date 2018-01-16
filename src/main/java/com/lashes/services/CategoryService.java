@@ -9,4 +9,6 @@ import java.util.List;
 public interface CategoryService {
     void addCategory(Category category);
     List<Category> getAllCategories(String categoryType);
+    Category getSingleCategory(Long id);
+    void editCategory(Category category);
 }

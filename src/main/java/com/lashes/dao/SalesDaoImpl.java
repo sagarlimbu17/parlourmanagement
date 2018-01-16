@@ -5,6 +5,8 @@ import com.lashes.entities.RgProduct;
 import com.lashes.entities.Sales;
 import com.lashes.entities.Stock;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,6 +29,8 @@ public class SalesDaoImpl implements SalesDao{
     public void createBill(List<Sales> salesList) {
 
         for(Sales s:salesList){
+           /* Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            System.out.println(authentication.getName());*/
             Long lastStockCount = productDao.returnLastStock(s.getName());
             Long newStockCount = lastStockCount-s.getQuantity();
 

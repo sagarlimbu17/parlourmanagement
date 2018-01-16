@@ -48,19 +48,18 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li><a th:href="@{/admin/billing}">Product Billing</a></li>
-                        <li><a href="#">Update bill</a></li>
                         <li><a th:href="@{/serviceBilling}">Service Billing</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="dropdown">
+                <div class="dropdown" >
                     <button class="btn btn-primary dropdown-toggle" type="button"
                             data-toggle="dropdown">
                         <span class="glyphicon glyphicon-education"></span><br/>
                         <p>FINANCE</p>
                     </button>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu" sec:authorize="hasRole('ROLE_ADMIN')">
                         <li><a th:href="@{/finance}">Set Target</a></li>
                         <li><a th:href="@{/financeanalysis}">Financial Analysis</a></li>
                     </ul>
@@ -73,9 +72,9 @@
                         <span class="glyphicon glyphicon-th-list"></span><br/>
                         <p>REPORTS</p>
                     </button>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu" sec:authorize="hasRole('ROLE_ADMIN')">
                         <li><a th:href="@{/report}">View Reports</a></li>
-                        <li><a href="#">Edit Reports</a></li>
+                        <li><a href="#">User Transaction</a></li>
                     </ul>
                 </div>
 
@@ -87,7 +86,7 @@
                         <span class="glyphicon glyphicon-user"></span><br/>
                         <p>USERS</p>
                     </button>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu" th:if="${#request.isUserInRole('ADMIN')}">
                         <li><a th:href="@{/createNewUser}">Create User</a></li>
                         <li><a th:href="@{/editUsers}">Edit Users</a></li>
                         <li><a th:href="@{/activateUser}">Activate User</a></li>
@@ -105,9 +104,7 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li><a th:href="@{/registerProduct}">Register Product</a></li>
-                        <li><a th:href="@{/registerService}">Register Service</a></li>
                         <li><a th:href="@{/editProduct}">Edit Product</a></li>
-                        <li><a href="@{/editServices}">Edit Services</a></li>
                     </ul>
                 </div>
             </div>
@@ -120,8 +117,6 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li><a th:href="@{/admin/addProduct}">Add New Product</a></li>
-                        <li><a href="#">List Products</a></li>
-                        <li><a href="#">Edit Products</a></li>
                     </ul>
                 </div>
             </div>
@@ -134,7 +129,7 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li><a th:href="@{/addCategory}">Add Category</a></li>
-                        <li><a th:href="@{/addItems}">Edit Category</a></li>
+                        <!--<li><a th:href="@{/editCategory}">Edit Category</a></li>-->
                     </ul>
                 </div>
             </div>
@@ -145,7 +140,7 @@
                         <span class="glyphicon glyphicon-plus"></span><br/>
                         <p>INVENTORY</p>
                     </button>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu" sec:authorize="hasRole('ROLE_ADMIN')">
                         <li><a th:href="@{/inventory(page=0)}">View Inventory</a></li>
                         <li><a href="#">Edit Products</a></li>
                     </ul>

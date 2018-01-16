@@ -19,10 +19,9 @@ public class HomeController {
 
     @RequestMapping("/")
     public String home(){
-        String password="A0ne11C0rp@1";
+        String password="!";
         //System.out.println("first admin password "+new BCryptPasswordEncoder().encode(password));
         return  "home";
-
     }
 
     @RequestMapping("/admin")

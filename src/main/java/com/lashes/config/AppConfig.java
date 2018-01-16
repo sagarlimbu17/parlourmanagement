@@ -1,7 +1,5 @@
 package com.lashes.config;
 
-import com.lashes.converters.LocalDateConverter;
-import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
@@ -9,9 +7,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
-import org.springframework.format.FormatterRegistry;
-import org.springframework.format.datetime.DateFormatterRegistrar;
-import org.springframework.format.datetime.standard.DateTimeFormatterRegistrar;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -24,6 +19,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.thymeleaf.TemplateEngine;
+import org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
@@ -84,9 +80,9 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 
     }
 
-/*
 
-    @Bean(name = "dataSource")
+
+/*    @Bean(name = "dataSource")
     public BasicDataSource dataSource(){
         BasicDataSource ds = new BasicDataSource();
         ds.setDriverClassName("org.postgresql.Driver");
@@ -95,8 +91,7 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
         ds.setPassword("postgres");
         return  ds;
 
-    }
-*/
+    }*/
 
 
     @Bean
@@ -133,6 +128,7 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
         SpringTemplateEngine engine = new SpringTemplateEngine();
         engine.setEnableSpringELCompiler(true);
         engine.setTemplateResolver(templateResolver());
+        engine.addDialect(new SpringSecurityDialect());
         return engine;
     }
 
