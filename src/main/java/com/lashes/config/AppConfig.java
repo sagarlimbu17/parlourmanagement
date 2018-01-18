@@ -76,7 +76,7 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
         prop.put("hibernate.format_sql","true");
         prop.put("hibernate.show_sql","true");
         prop.put("hibernate.dialect","org.hibernate.dialect.PostgreSQLDialect");
-        prop.setProperty("hibernate.hbm2ddl.auto","update");
+        prop.setProperty("hibernate.hbm2ddl.auto","create");
         return prop;
 
     }
