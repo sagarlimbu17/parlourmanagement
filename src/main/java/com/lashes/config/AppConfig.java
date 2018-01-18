@@ -1,5 +1,6 @@
 package com.lashes.config;
 
+import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
@@ -82,7 +83,7 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 
 
 
-/*    @Bean(name = "dataSource")
+   /* @Bean(name = "dataSource")
     public BasicDataSource dataSource(){
         BasicDataSource ds = new BasicDataSource();
         ds.setDriverClassName("org.postgresql.Driver");
@@ -91,8 +92,8 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
         ds.setPassword("postgres");
         return  ds;
 
-    }*/
-
+    }
+*/
 
     @Bean
     public DataSource dataSource() throws URISyntaxException {
@@ -114,7 +115,6 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 
         return dataSource;
     }
-
     @Bean
     public ViewResolver viewResolver() {
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();

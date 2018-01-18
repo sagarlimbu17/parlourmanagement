@@ -47,6 +47,7 @@
       <CanLogin>1</CanLogin>
       <Replication>1</Replication>
       <ConnectionLimit>-1</ConnectionLimit>
+      <ValidUntil>infinity</ValidUntil>
       <BypassRls>1</BypassRls>
     </role>
     <role id="11" parent="1" name="sagar">
@@ -60,8 +61,8 @@
     </role>
     <schema id="12" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2018-01-15.08:06:17.239</IntrospectionTimestamp>
-      <IntrospectionStateNumber>699</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-01-18.22:36:40.622</IntrospectionTimestamp>
+      <IntrospectionStateNumber>747</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -116,230 +117,234 @@
     </table>
     <table id="25" parent="12" name="sales">
       <ObjectId>16602</ObjectId>
-      <StateNumber>625</StateNumber>
+      <StateNumber>747</StateNumber>
     </table>
     <table id="26" parent="12" name="stock">
       <ObjectId>16610</ObjectId>
       <StateNumber>628</StateNumber>
     </table>
-    <column id="27" parent="20" name="id">
+    <table id="27" parent="12" name="users">
+      <ObjectId>16763</ObjectId>
+      <StateNumber>740</StateNumber>
+    </table>
+    <column id="28" parent="20" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>620</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="28" parent="20" name="billingtype">
+    <column id="29" parent="20" name="billingtype">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <StateNumber>620</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="29" parent="20" name="createdby">
+    <column id="30" parent="20" name="createdby">
       <Position>3</Position>
       <DataType>timestamp|0</DataType>
       <StateNumber>620</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="30" parent="20" name="customername">
+    <column id="31" parent="20" name="customername">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <StateNumber>620</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="31" parent="20" name="productcategory">
+    <column id="32" parent="20" name="productcategory">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
       <StateNumber>620</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="32" parent="20" name="productname">
+    <column id="33" parent="20" name="productname">
       <Position>6</Position>
       <DataType>varchar(255)|0</DataType>
       <StateNumber>620</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="33" parent="20" name="productprice">
+    <column id="34" parent="20" name="productprice">
       <Position>7</Position>
       <DataType>double precision|0</DataType>
       <StateNumber>620</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <column id="34" parent="20" name="quantity">
+    <column id="35" parent="20" name="quantity">
       <Position>8</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>620</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="35" parent="20" name="updatedby">
+    <column id="36" parent="20" name="updatedby">
       <Position>9</Position>
       <DataType>timestamp|0</DataType>
       <StateNumber>620</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <index id="36" parent="20" name="billing_pkey">
+    <index id="37" parent="20" name="billing_pkey">
       <ObjectId>16571</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="37" parent="20" name="billing_pkey">
+    <key id="38" parent="20" name="billing_pkey">
       <ObjectId>16572</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>billing_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="38" parent="21" name="id">
+    <column id="39" parent="21" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>670</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="39" parent="21" name="category">
+    <column id="40" parent="21" name="category">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <StateNumber>670</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="40" parent="21" name="categorytype">
+    <column id="41" parent="21" name="categorytype">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <StateNumber>670</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="41" parent="21" name="category_pkey">
+    <index id="42" parent="21" name="category_pkey">
       <ObjectId>16654</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="42" parent="21" name="uk_n0ahfy69g1it0rgj0uh9mirj1">
+    <index id="43" parent="21" name="uk_n0ahfy69g1it0rgj0uh9mirj1">
       <ObjectId>16656</ObjectId>
       <ColNames>category</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="43" parent="21" name="category_pkey">
+    <key id="44" parent="21" name="category_pkey">
       <ObjectId>16655</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>category_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="44" parent="21" name="uk_n0ahfy69g1it0rgj0uh9mirj1">
+    <key id="45" parent="21" name="uk_n0ahfy69g1it0rgj0uh9mirj1">
       <ObjectId>16657</ObjectId>
       <ColNames>category</ColNames>
       <UnderlyingIndexName>uk_n0ahfy69g1it0rgj0uh9mirj1</UnderlyingIndexName>
     </key>
-    <column id="45" parent="22" name="id">
+    <column id="46" parent="22" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>622</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="46" parent="22" name="createddate">
+    <column id="47" parent="22" name="createddate">
       <Position>2</Position>
       <DataType>timestamp|0</DataType>
       <StateNumber>622</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="47" parent="22" name="targetamount">
+    <column id="48" parent="22" name="targetamount">
       <Position>3</Position>
       <DataType>double precision|0</DataType>
       <StateNumber>622</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <column id="48" parent="22" name="targetdate">
+    <column id="49" parent="22" name="targetdate">
       <Position>4</Position>
       <DataType>timestamp|0</DataType>
       <StateNumber>622</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <index id="49" parent="22" name="finance_pkey">
+    <index id="50" parent="22" name="finance_pkey">
       <ObjectId>16584</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="50" parent="22" name="finance_pkey">
+    <key id="51" parent="22" name="finance_pkey">
       <ObjectId>16585</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>finance_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="51" parent="23" name="id">
+    <column id="52" parent="23" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>623</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="52" parent="23" name="addedby">
+    <column id="53" parent="23" name="addedby">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <StateNumber>623</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="53" parent="23" name="createddate">
+    <column id="54" parent="23" name="createddate">
       <Position>3</Position>
       <DataType>timestamp|0</DataType>
       <StateNumber>623</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="54" parent="23" name="productcategory">
+    <column id="55" parent="23" name="productcategory">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <StateNumber>623</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="55" parent="23" name="productname">
+    <column id="56" parent="23" name="productname">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
       <StateNumber>623</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="56" parent="23" name="productprice">
+    <column id="57" parent="23" name="productprice">
       <Position>6</Position>
       <DataType>double precision|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>623</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <column id="57" parent="23" name="productquantity">
+    <column id="58" parent="23" name="productquantity">
       <Position>7</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>623</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="58" parent="23" name="productvendor">
+    <column id="59" parent="23" name="productvendor">
       <Position>8</Position>
       <DataType>varchar(255)|0</DataType>
       <StateNumber>623</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="59" parent="23" name="updatedate">
+    <column id="60" parent="23" name="updatedate">
       <Position>9</Position>
       <DataType>timestamp|0</DataType>
       <StateNumber>623</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="60" parent="23" name="stock_stockid">
+    <column id="61" parent="23" name="stock_stockid">
       <Position>10</Position>
       <DataType>integer|0</DataType>
       <StateNumber>623</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="61" parent="23" name="product_pkey">
+    <index id="62" parent="23" name="product_pkey">
       <ObjectId>16592</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="62" parent="23" name="product_pkey">
+    <key id="63" parent="23" name="product_pkey">
       <ObjectId>16593</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>product_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="63" parent="23" name="fkoks7fkeqcwwryqoe5yj9jwyle">
+    <foreign-key id="64" parent="23" name="fkoks7fkeqcwwryqoe5yj9jwyle">
       <ObjectId>16620</ObjectId>
       <ColNames>stock_stockid</ColNames>
       <RefTableId>16610</RefTableId>
@@ -348,200 +353,255 @@
       <RefKeyName>stock_pkey</RefKeyName>
       <RefColNames>stockid</RefColNames>
     </foreign-key>
-    <column id="64" parent="24" name="id">
+    <column id="65" parent="24" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>664</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="65" parent="24" name="costprice">
+    <column id="66" parent="24" name="costprice">
       <Position>2</Position>
       <DataType>double precision|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>664</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <column id="66" parent="24" name="finalstock">
+    <column id="67" parent="24" name="finalstock">
       <Position>3</Position>
       <DataType>bigint|0</DataType>
       <StateNumber>664</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="67" parent="24" name="productcategory">
+    <column id="68" parent="24" name="productcategory">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>664</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="68" parent="24" name="productname">
+    <column id="69" parent="24" name="productname">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>664</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="69" parent="24" name="productvendor">
+    <column id="70" parent="24" name="productvendor">
       <Position>6</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>664</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="70" parent="24" name="sellingprice">
+    <column id="71" parent="24" name="sellingprice">
       <Position>7</Position>
       <DataType>double precision|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>664</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <index id="71" parent="24" name="rgproduct_pkey">
+    <index id="72" parent="24" name="rgproduct_pkey">
       <ObjectId>16644</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="72" parent="24" name="uk_iq7kuoyyh9w0uj6ww81a9hgjw">
+    <index id="73" parent="24" name="uk_iq7kuoyyh9w0uj6ww81a9hgjw">
       <ObjectId>16646</ObjectId>
       <ColNames>productname</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="73" parent="24" name="rgproduct_pkey">
+    <key id="74" parent="24" name="rgproduct_pkey">
       <ObjectId>16645</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>rgproduct_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="74" parent="24" name="uk_iq7kuoyyh9w0uj6ww81a9hgjw">
+    <key id="75" parent="24" name="uk_iq7kuoyyh9w0uj6ww81a9hgjw">
       <ObjectId>16647</ObjectId>
       <ColNames>productname</ColNames>
       <UnderlyingIndexName>uk_iq7kuoyyh9w0uj6ww81a9hgjw</UnderlyingIndexName>
     </key>
-    <check id="75" parent="24" name="rgproduct_costprice_check">
+    <check id="76" parent="24" name="rgproduct_costprice_check">
       <ObjectId>16639</ObjectId>
       <ColNames>costprice</ColNames>
       <Predicate>costprice &gt;= (1)::double precision</Predicate>
     </check>
-    <check id="76" parent="24" name="rgproduct_sellingprice_check">
+    <check id="77" parent="24" name="rgproduct_sellingprice_check">
       <ObjectId>16640</ObjectId>
       <ColNames>sellingprice</ColNames>
       <Predicate>sellingprice &gt;= (1)::double precision</Predicate>
     </check>
-    <column id="77" parent="25" name="salesid">
+    <column id="78" parent="25" name="salesid">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>625</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="78" parent="25" name="category">
+    <column id="79" parent="25" name="category">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <StateNumber>625</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="79" parent="25" name="createddate">
+    <column id="80" parent="25" name="createddate">
       <Position>3</Position>
       <DataType>date|0</DataType>
       <StateNumber>625</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="80" parent="25" name="name">
+    <column id="81" parent="25" name="name">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <StateNumber>625</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="81" parent="25" name="quantity">
+    <column id="82" parent="25" name="quantity">
       <Position>5</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>625</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="82" parent="25" name="salestype">
+    <column id="83" parent="25" name="salestype">
       <Position>6</Position>
       <DataType>varchar(255)|0</DataType>
       <StateNumber>625</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="83" parent="25" name="totalcostprice">
+    <column id="84" parent="25" name="totalcostprice">
       <Position>7</Position>
       <DataType>double precision|0</DataType>
       <StateNumber>625</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <column id="84" parent="25" name="totalprice">
+    <column id="85" parent="25" name="totalprice">
       <Position>8</Position>
       <DataType>double precision|0</DataType>
       <StateNumber>625</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <column id="85" parent="25" name="vendor">
+    <column id="86" parent="25" name="vendor">
       <Position>9</Position>
       <DataType>varchar(255)|0</DataType>
       <StateNumber>625</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="86" parent="25" name="sales_pkey">
+    <column id="87" parent="25" name="salesby">
+      <Position>10</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>747</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="88" parent="25" name="sales_pkey">
       <ObjectId>16608</ObjectId>
       <ColNames>salesid</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="87" parent="25" name="sales_pkey">
+    <key id="89" parent="25" name="sales_pkey">
       <ObjectId>16609</ObjectId>
       <ColNames>salesid</ColNames>
       <UnderlyingIndexName>sales_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="88" parent="26" name="stockid">
+    <column id="90" parent="26" name="stockid">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>626</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="89" parent="26" name="createddate">
+    <column id="91" parent="26" name="createddate">
       <Position>2</Position>
       <DataType>timestamp|0</DataType>
       <StateNumber>626</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="90" parent="26" name="finalstock">
+    <column id="92" parent="26" name="finalstock">
       <Position>3</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>626</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="91" parent="26" name="product_id">
+    <column id="93" parent="26" name="product_id">
       <Position>4</Position>
       <DataType>bigint|0</DataType>
       <StateNumber>626</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="92" parent="26" name="productname">
+    <column id="94" parent="26" name="productname">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
       <StateNumber>626</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="93" parent="26" name="updateddate">
+    <column id="95" parent="26" name="updateddate">
       <Position>6</Position>
       <DataType>timestamp|0</DataType>
       <StateNumber>626</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <index id="94" parent="26" name="stock_pkey">
+    <index id="96" parent="26" name="stock_pkey">
       <ObjectId>16613</ObjectId>
       <ColNames>stockid</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="95" parent="26" name="stock_pkey">
+    <key id="97" parent="26" name="stock_pkey">
       <ObjectId>16614</ObjectId>
       <ColNames>stockid</ColNames>
       <UnderlyingIndexName>stock_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
+    </key>
+    <column id="98" parent="27" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>735</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="99" parent="27" name="enabled">
+      <Position>2</Position>
+      <DataType>boolean|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>735</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="100" parent="27" name="password">
+      <Position>3</Position>
+      <DataType>varchar(60)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>735</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="101" parent="27" name="username">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>735</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="102" parent="27" name="users_pkey">
+      <ObjectId>16766</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="103" parent="27" name="uk_r43af9ap4edm43mmtq01oddj6">
+      <ObjectId>16770</ObjectId>
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="104" parent="27" name="users_pkey">
+      <ObjectId>16767</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="105" parent="27" name="uk_r43af9ap4edm43mmtq01oddj6">
+      <ObjectId>16771</ObjectId>
+      <ColNames>username</ColNames>
+      <UnderlyingIndexName>uk_r43af9ap4edm43mmtq01oddj6</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>

@@ -152,7 +152,7 @@ function createBills(e){
     var modal_total =document.getElementById("modal_total");
     console.log("we are fetching api")
 /*    https://allinonemgmtapp.herokuapp.com/createBill*/
-    fetch('http://localhost:5080/createBill',{
+    fetch('https://allinonemgmtapp.herokuapp.com/createBill',{
         method:'POST',
         headers:{
             'Accept':'application/json, text/plain, */*',
