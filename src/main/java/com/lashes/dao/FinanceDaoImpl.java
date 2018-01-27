@@ -25,13 +25,25 @@ public class FinanceDaoImpl implements FinanceDao {
 
     @Override
     public void targetActivated(Finance finance) {
-        if(getFinanceById()==null){
+        if(getFinanceForAnalysis()==null){
             em.persist(finance);
             return;
         }
 
-        finance.setId(getFinanceById().getId());
+        finance.setId(getFinanceForAnalysis().getId());
         em.merge(finance);
+
+    }
+
+    private Finance getFinanceForAnalysis(){
+        List<Finance> finances = em.createQuery("select  f from Finance f")
+                .getResultList();
+        Finance f=null;
+        if(finances.size()>=0){
+            f=finances.get(0);
+        }
+        return f;
+
 
     }
 

@@ -83,7 +83,7 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 
 
 
-   /* @Bean(name = "dataSource")
+/*    @Bean(name = "dataSource")
     public BasicDataSource dataSource(){
         BasicDataSource ds = new BasicDataSource();
         ds.setDriverClassName("org.postgresql.Driver");
