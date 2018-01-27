@@ -16,14 +16,17 @@
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7403f53-fa47-4d5a-b70f-b4d0a28c8ab3" name="Default" comment="auto create db">
+    <list default="true" id="b7403f53-fa47-4d5a-b70f-b4d0a28c8ab3" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bf54164a-2c3d-4cb4-b43e-e60b7f2cc13c.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/bf54164a-2c3d-4cb4-b43e-e60b7f2cc13c.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bf54164a-2c3d-4cb4-b43e-e60b7f2cc13c/storage_v2/_src_/database/lashes.uCTYvQ/schema/public.abK9xQ.meta" afterPath="$PROJECT_DIR$/.idea/dataSources/bf54164a-2c3d-4cb4-b43e-e60b7f2cc13c/storage_v2/_src_/database/lashes.uCTYvQ/schema/public.abK9xQ.meta" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lashes/config/AppConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/lashes/config/AppConfig.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lashes/dao/FinanceDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/lashes/dao/FinanceDaoImpl.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lashes/config/AppConfig.class" afterPath="$PROJECT_DIR$/target/classes/com/lashes/config/AppConfig.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lashes/controller/AppController.class" afterPath="$PROJECT_DIR$/target/classes/com/lashes/controller/AppController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lashes/controller/BillController.class" afterPath="$PROJECT_DIR$/target/classes/com/lashes/controller/BillController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lashes/dao/SalesDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/lashes/dao/SalesDaoImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/ParlourManager/WEB-INF/classes/com/lashes/config/AppConfig.class" afterPath="$PROJECT_DIR$/target/ParlourManager/WEB-INF/classes/com/lashes/config/AppConfig.class" />
+      <change beforePath="$PROJECT_DIR$/target/ParlourManager/WEB-INF/classes/com/lashes/controller/BillController.class" afterPath="$PROJECT_DIR$/target/ParlourManager/WEB-INF/classes/com/lashes/controller/BillController.class" />
+      <change beforePath="$PROJECT_DIR$/target/ParlourManager/WEB-INF/classes/com/lashes/dao/FinanceDaoImpl.class" afterPath="$PROJECT_DIR$/target/ParlourManager/WEB-INF/classes/com/lashes/dao/FinanceDaoImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/ParlourManager/WEB-INF/classes/com/lashes/services/UserServicesImpl.class" afterPath="$PROJECT_DIR$/target/ParlourManager/WEB-INF/classes/com/lashes/services/UserServicesImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/ParlourManager/WEB-INF/templates/users/newuser.html" afterPath="$PROJECT_DIR$/target/ParlourManager/WEB-INF/templates/users/newuser.html" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lashes/dao/FinanceDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/lashes/dao/FinanceDaoImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lashes/services/UserServicesImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/lashes/services/UserServicesImpl.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -82,8 +85,8 @@
       <file leaf-file-name="FinanceDaoImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lashes/dao/FinanceDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="38" column="64" lean-forward="false" selection-start-line="38" selection-start-column="64" selection-end-line="38" selection-end-column="64" />
+            <state relative-caret-position="188">
+              <caret line="44" column="17" lean-forward="true" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
               <folding>
                 <marker date="1517075561888" expanded="true" signature="1395:1457" ph="SELECT sum(t... Sales" />
                 <marker date="1517075561888" expanded="true" signature="1705:1763" ph="SELECT sum(t... Sales" />
@@ -100,7 +103,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lashes/dao/CategoryDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="301">
-              <caret line="41" column="24" lean-forward="true" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
+              <caret line="41" column="24" lean-forward="false" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -130,7 +133,7 @@
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/bf54164a-2c3d-4cb4-b43e-e60b7f2cc13c/console.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" column="68" lean-forward="true" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
+              <caret line="3" column="68" lean-forward="false" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -150,7 +153,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lashes/config/AppConfig.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="81" column="5" lean-forward="true" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
+              <caret line="81" column="5" lean-forward="false" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -899,7 +902,7 @@
       <workItem from="1516290375859" duration="4976000" />
       <workItem from="1516344992261" duration="660000" />
       <workItem from="1516346365909" duration="31000" />
-      <workItem from="1517073299240" duration="2526000" />
+      <workItem from="1517073299240" duration="3299000" />
     </task>
     <task id="LOCAL-00001" summary="fourth commit">
       <created>1509357051064</created>
@@ -1181,11 +1184,18 @@
       <option name="project" value="LOCAL" />
       <updated>1516297113882</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="auto create db">
+      <created>1517075842388</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1517075842388</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="601414000" />
+    <option name="totallyTimeSpent" value="602187000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1211,7 +1221,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47263682" sideWeight="0.4969697" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4809287" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4809287" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -1751,7 +1761,7 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/bf54164a-2c3d-4cb4-b43e-e60b7f2cc13c/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="68" lean-forward="true" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
+          <caret line="3" column="68" lean-forward="false" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
           <folding />
         </state>
       </provider>
@@ -1759,7 +1769,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lashes/dao/CategoryDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
-          <caret line="41" column="24" lean-forward="true" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
+          <caret line="41" column="24" lean-forward="false" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1767,7 +1777,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lashes/config/AppConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="81" column="5" lean-forward="true" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
+          <caret line="81" column="5" lean-forward="false" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1776,8 +1786,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lashes/dao/FinanceDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="38" column="64" lean-forward="false" selection-start-line="38" selection-start-column="64" selection-end-line="38" selection-end-column="64" />
+        <state relative-caret-position="188">
+          <caret line="44" column="17" lean-forward="true" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
           <folding>
             <marker date="1517075561888" expanded="true" signature="1395:1457" ph="SELECT sum(t... Sales" />
             <marker date="1517075561888" expanded="true" signature="1705:1763" ph="SELECT sum(t... Sales" />
